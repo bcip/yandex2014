@@ -1,0 +1,36 @@
+\begin{problem}{Evil Palindromes}{\textsl{standard input}}{\textsl{standard input}}{6 seconds}{256 mebibytes}{}
+
+Little Artem likes palindromes and his car very much. He likes his car so much that he has bought a digital locker for the door to protect it. To open the locker, one needs to input an integer code. Since Artem likes palindromes, he's obviously chosen one of them as the code for the locker. But he always forgets the right number.
+
+A number is a palindrome if its decimal notation without unnecessary leading zeroes reads the same from left to right and from right to left. Note that a negative number is not a palindrome.
+
+On one of the days when Artem has forgotten the code again, and so went for the bus stop instead of driving his car, he decided to create a hint for himself. Of course, he doesn't want the hint to be very easy. He decided to write such a number $n$ on the locker that his code is the $k$-th next palindrome for this number $n$. Then, Artem has to remember only the number $k$.
+
+Let us formally define the $k$-th next palindrome for an integer $n$ given that $k \ne 0$. If $k > 0$, write down all palindrome numbers which are strictly greater than $n$ in ascending order; the answer is $k$-th of these numbers. If $k < 0$, write down all palindrome numbers which are strictly less than $n$ in descending order; the answer is $|k|$-th of these numbers.
+
+Given the numbers $n$ and $k$, help Artem to find the code.
+
+\InputFile
+The first line of input contains two integers $n$ and $k$ ($-10^{100\,000} < n < 10^{100\,000}$, $-10^9 \le k \le 10^9$, $k \ne 0$) which are the hint and the number remembered by Artem. The given numbers don't contain unnecessary leading zeroes. 
+
+\OutputFile
+Find the $k$-th next palindrome for the number $n$. If it does not exist, print ``\texttt{-1}''.
+
+\Examples
+
+\begin{example}
+\exmp{15 1
+}{22
+}%
+\exmp{0 1
+}{1
+}%
+\exmp{-1 -1
+}{-1
+}%
+\exmp{22 -1
+}{11
+}%
+\end{example}
+
+\end{problem}

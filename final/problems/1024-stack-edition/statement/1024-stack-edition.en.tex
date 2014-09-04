@@ -1,0 +1,35 @@
+\begin{problem}{1024 Stack Edition}{stdin}{stdout}{1 second}{512 megabytes}
+
+Recently Ksyusha bought an application ``1024 Stack Edition'' (turn-based arcade) in an online shop. As you might guess from the title, the game is about some stack filled up with powers of two. According to the rules, the player can do one of the following three actions on each move:
+\begin{itemize}
+\item Add a random number to the top of the stack.
+\item Delete the number from the top of stack.
+\item If the two numbers on the top of the stack are equal, replace them with their sum.
+\end{itemize}
+
+If the player chooses to add a random number to the top of the stack, this number will be equal to $1$ with probability $p$ and equal to $2$ with the remaining probability $(1 - p)$ independently of other generated random numbers. If a player chooses to remove the number from the top of the stack, she pays a fine of one coin. Note that any other action except removing the number from the top of the stack does not lead to paying the fine. If the stack consists of a single number $1024$ and nothing else, the player wins the game. When it happens, the less the player paid as fine, the better.
+
+Once Ksyusha had left her smartphone unattended. After coming back, she found out that somebody played ``1024 Stack Edition''. Ksyusha does not care who was it and why. She is interested in calculating the expected value of the fine that she will pay while completing the game (given that she plays optimally). Your task is to find this number.
+
+\InputFile
+The first line of input contains two integers: the initial size of the stack $N$ ($0 \le N \le 100\,000$) and the probability $p$ ($0 < p \le 100$) expressed \textbf{as a percentage}. The second line contains the sequence of $N$ positive integers $s_i$ ($s_i = 2^h$ where $h$ is an integer and $0 \le h \le 10$) that are initially located in the stack, starting with the deepest elements (the top of the stack is the last number in the line). Note that the stack may be empty, which means there will be no numbers on the second line. Also note that there is no upper bound on the size of the stack, only the initial size is given.
+
+
+\OutputFile
+Print the expected number of coins that Ksyusha will need to pay while finishing the game given in the input. The absolute or relative error should not exceed $10^{-6}$.
+
+
+\Examples
+
+\begin{example}
+\exmp{10 50
+512 256 128 64 32 16 8 4 2 1
+}{1.000000000
+}%
+\exmp{9 50
+512 256 128 64 32 16 8 4 2
+}{0.500000000
+}%
+\end{example}
+
+\end{problem}

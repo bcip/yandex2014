@@ -1,0 +1,30 @@
+\begin{problem}{Science}{\textsl{standard input}}{\textsl{standard input}}{2 seconds}{256 mebibytes}{}
+
+Little Artem became a scientist. More specifically, he became a chemist. He is studying crystal lattices. Artem is interested in the connections in them.
+
+In this problem, you can imagine a crystal lattice as a string of length $n$ that consists of two types of atoms. Artem is interested only in atoms of the first type. A \textit{$k$-stable connection} is a substring that consists of $k$ consecutive atoms of the first type which are surrounded with atoms of the second type.
+
+Artem wants to calculate the expected number of $k$-stable connections in a randomly generated string of length $n$. In a randomly generated string, every atom is of either the first or the second type with equal probability, independently from other atoms.
+
+
+\InputFile
+The first line of input contains two integers $n$ and $k$ ($1 \le n \le 10^{18}$, $1 \le k \le 100$) which are the length of the random string and the desired length of stable connections.
+
+\OutputFile
+Output a single real number: the required expectation. The answer is considered correct if the absolute or relative error is no more than $10^{-9}$.
+
+\Examples
+
+\begin{example}
+\exmp{3 1
+}{0.12500000000000000000
+}%
+\exmp{5 2
+}{0.12500000000000000000
+}%
+\exmp{5 1
+}{0.37500000000000000000
+}%
+\end{example}
+
+\end{problem}

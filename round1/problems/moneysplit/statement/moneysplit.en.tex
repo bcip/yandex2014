@@ -1,0 +1,38 @@
+\begin{problem}{Splitting Money}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 mebibytes}{}
+
+While digging a well, Tomek and Wojtek found a jar full of old bills.
+Even though some of them may had the same nominals, they were all fully distinguishable.
+They were not old enough to be worth any actual money though, so the guys decided to split them in quite an extraordinary way.
+Tomek will take some of the bills (maybe none), then Wojtek will take some (maybe none), so that the $xor$ of Wojtek's nominals equals the $xor$ of Tomek's.
+The rest will be left in the jar.
+How many ways in which this can be done are possible?
+
+\InputFile
+    The first line of the input contains an integer $n$ ($1 \leq n \leq 10\,000$), the number of bills.
+	 The second line contains $n$ integers $a_1, \ldots, a_n$ ($1 \leq a_i \leq 10\,000$), the nominals of the bills.
+
+\OutputFile
+	Output the number of money splits such that the $xor$ of Wojtek's nominals equals the $xor$ of Tomek's.
+	The answer might be big, so output it modulo $10^9+7$.
+
+\Examples
+\begin{example}
+\exmp{
+5
+42 1 3 3 6
+}{
+5
+}%
+\end{example}
+
+\Note
+
+In the above example, the possible splits are:
+\begin{itemize}
+    \item $\{3\} : \{3\}$ (two ways)
+    \item $\{3,3\} : \{\}$ 
+    \item $\{\} : \{3,3\}$ 
+    \item $\{\} : \{\}$ 
+\end{itemize}
+
+\end{problem}

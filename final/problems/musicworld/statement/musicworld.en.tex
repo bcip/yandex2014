@@ -1,0 +1,61 @@
+\begin{problem}{Musical World}{stdin}{stdout}{1 second}{512 megabytes}
+
+In the brand new Yandex.Music service, personal online radios are now even better than before. They take into account every single track a user listened to, and create a pool of tracks the user may like. Player randomly chooses one track from this pool to play, then another and so on.
+
+But Yandex servers are so fast that they can predict recommendations not only for the currently playing track, but also for all recommended songs at once.
+
+So, a user chooses the first track, then the algorithm builds recommendations for $N$ songs forward. Each song in $i$-th generation can add at most $K_i$ ($1 \le K_i \le 5$) new songs in generation $(i + 1)$, and will add exactly $j$ songs with probability $p_{i, j}$ for each $j$ from $0$ to $K_i$. The recommendations based on each single song are independent of other songs in the same generation.
+
+The research was conducted on indie music, so consider that all songs are different. To calculate the variety of recommended music, the algorithm needs to compare each pair of tracks. To estimate the amount of memory required to run this algorithm, calculate the expected value of the number of pairs in the recommendation pool in generation $(N + 1)$.
+
+\InputFile
+The first line of input holds the number of generations $N$ ($1 \le N \le 10^5$) you need to calculate the recommendations for.
+
+Each of the next $N$ lines holds the probability distribution for the number of recommended songs in generation.
+The $i$-th of these lines starts with an integer $K_i$ ($1 \le K_i \le 5$) which is the maximum possible number of songs recommended based on one song in generation $i$.
+It is followed by $(K_i + 1)$ integers $a_{i, j}$ ($1 \le a_{i, j} \le 1000$) each of which is a non-normalized probability to recommend $j$ songs in generation $(i + 1)$ based on one song in generation $i$.
+Normalized probability $p_{i,j}$ can be calculated as $\frac{a_{i,j}}{\sum\limits_{l=0}^{k}{a_{i,l}}}$.
+
+The first generation contains only the first song, the second generation contains all the songs recommended based on the first song, the third generation contains all songs recommended based on each song in generation 2, and so on.
+
+\OutputFile
+As the answer for the problem can be very large, calculate it as an irreducible fraction $\frac{A}{B}$ and output $(A \cdot B^{-1}) \bmod (10^{9} + 7)$. Here, $B^{-1}$ is the multiplicative inverse of $B$ modulo $10^{9} + 7$. The input constraints guarantee that $B$ does not divide by $10^{9} + 7$, so this expression is properly defined.
+
+\Examples
+
+\begin{example}
+\exmp{2
+2 1 1 1
+2 1 1 1
+}{666666672
+}%
+\exmp{2
+2 1 1 1
+2 1 1 2
+}{520833338
+}%
+\exmp{2
+2 1 1 2
+2 1 1 1
+}{916666674
+}%
+\end{example}
+
+\Note
+In the first example, both generations produce $0$ to $2$ tracks with probability of  $\frac{1}{3}$.
+
+Generation $3$ will hold the following number of songs:
+
+\begin{itemize}
+\item $0$ with probability $\frac{13}{27}$,
+\item $1$ with probability $\frac{5}{27}$,
+\item $2$ with probability $\frac{2}{9}$,
+\item $3$ with probability $\frac{2}{27}$,
+\item $4$ with probability $\frac{1}{27}$.
+\end{itemize}
+
+The expected value is therefore $\frac{2}{9}\binom{2}{2} + \frac{2}{27}\binom{3}{2} + \frac{1}{27}\binom{4}{2} = \frac{2}{3}$.
+
+The answer for the second example is $\frac{49}{48}$, and for the third example it is $\frac{11}{12}$.
+
+\end{problem}

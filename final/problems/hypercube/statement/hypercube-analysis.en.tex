@@ -1,0 +1,20 @@
+\begin{problem}{UFO}
+{\textsl{standard input}}{\textsl{standard output}}
+{1 second}{512 mebibytes}{}
+
+This is easiest problem of this problemset.
+
+It is obvious that the number of dimensions of the parallelepiped
+is not less than the number $D$ of distinct lenghts of given sticks.
+Also note that $K$-dimensional parallelepiped contains $2^{K-1}$ edges
+of the same type (i.e. parallel to same coordinate axis),
+and in the case that we have $X$ sticks of the same length,
+$[(X-1)/2^{K-1}]+1$ dimensions must be used to have $X$ or more edges.
+
+So we will let $K=D$ and sum these values for all sets of sticks of same size.
+If the sum is less than $K$, the answer is found, else increase $K$
+and calculate the sum again.
+Note that for $K=21$, the number of edges of the same type is equal to
+$2^{20} > 10^6$, so the number of steps in our algorithm will be very small.
+
+\end{problem}

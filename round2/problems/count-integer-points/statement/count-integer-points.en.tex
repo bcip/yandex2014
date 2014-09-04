@@ -1,0 +1,28 @@
+\begin{problem}{Points}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 mebibytes}{}
+
+You are given three pairwise non-collinear vectors $\vec{a} = (a_x, a_y)$, $\vec{b} = (b_x, b_y)$, $\vec{c} = (c_x, c_y)$ and an integer number $N$. Find the number of distinct points $p$ such that $p = u_a \cdot \vec{a} + u_b \cdot \vec{b} + u_c \cdot \vec{c}$, where the numbers $u_a$, $u_b$ and $u_c$ are integers and $0 \le u_a, u_b, u_c \le N - 1$. Two points $p = (p_x, p_y)$ and $q = (q_x, q_y)$ are considered distinct if $p_x \ne q_x$ or $p_y \ne q_y$.
+
+\InputFile
+The first line contains a single integer $N$ ($1 \le N \le 2000$). Six integers are listed in the second line: $a_x$, $a_y$, $b_x$, $b_y$, $c_x$, $c_y$ ($1 \le a_x, a_y, b_x, b_y, c_x, c_y \le 1000$).
+
+\OutputFile
+In a single line you must output the desired number of points.
+
+\Examples
+
+\begin{example}
+\exmp{5
+2 1 1 2 3 3
+}{61
+}%
+\exmp{5
+10 1 5 5 1 10
+}{125
+}%
+\exmp{2
+2 3 1 2 1 1
+}{7
+}%
+\end{example}
+
+\end{problem}

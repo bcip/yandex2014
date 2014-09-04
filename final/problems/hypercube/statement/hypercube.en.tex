@@ -1,0 +1,32 @@
+\begin{problem}{UFO}{stdin}{stdout}{1 second}{512 megabytes}
+
+Last night, an UFO crash landed in a small lake near Vasya's home. 
+
+UFO was constructed as an $N$-dimensional rectangular parallelepiped with integer lengths of edges.
+At the moment of crash, the joints and all the other parts of UFO except for titanium edges were burned out.
+The edges themselves however did not break.
+
+In the morning, Vasya came to the lake and found $K$ titanium sticks.
+Assuming that those sticks are edges of an UFO and that some of those edges are still under water, find out the minimum possible number of dimensions $N$ of the place where this UFO was from.
+
+\InputFile
+The first line of input contains one integer $K$ ($1 \le K \le 10^6$) which is the number of sticks found by Vasya.
+The second line contains $K$ space-separated integers $a_i$ ($1 \le a_i \le 10^6$) which are the lengths of the sticks.
+
+\OutputFile
+Print one integer: the minimum possible number of dimensions $N$ of the place where UFO came from.
+
+\Examples
+
+\begin{example}
+\exmp{3
+1 2 3
+}{3
+}%
+\exmp{3
+1 2 2
+}{2
+}%
+\end{example}
+
+\end{problem}

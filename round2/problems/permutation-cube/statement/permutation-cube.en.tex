@@ -1,0 +1,35 @@
+\begin{problem}{Permutation Cube}{\textsl{standard input}}{\textsl{standard output}}{3 seconds}{256 megabytes}
+
+Recently Ksyusha installed the game ``Permutation Cube'' on her computer. The rules are the following. At the beginning, three permutations $X_i$, $Y_i$ and $Z_i$ of the set $1$, $2$, $\dots$, $N$ are generated. On the each move, the player can perform one of two actions:
+\begin{itemize}
+\item Move the cursor to an arbitrary point $(u, v, t)$ where $1 \le u, v, t \le N$. The player must pay a fee of $1$ coin.
+\item If the current cursor position is $(u, v, t)$, move the cursor to the point $(X_u, Y_v, Z_t)$ for free.
+\end{itemize}
+The aim of the game is to visit all $N^3$ points $(u, v, t)$ such that $1 \le u, v, t \le N$. At the beginning, the cursor is not placed anywhere. Find the minimum number of coins that Ksyusha will need to pay in order to win.
+
+Recall that a \emph{permutation} is an ordered arrangement of the set of numbers $1$, $2$, $\dots$, $N$ in which each of these numbers occurs exactly once.
+
+\InputFile
+The first line contains an integer $N$, the size of playing field ($1 \le N \le 30\,000$). The next three lines contain permutations $X_i$, $Y_i$ and $Z_i$, one per line. It is guaranteed that each of these lines contains a valid permutation of the numbers $1$, $2$, $\dots$, $N$. Consecutive elements of each permutation are separated by spaces.
+
+\OutputFile
+Print the minimum number of coins needed to be paid in order to win the game.
+
+\Examples
+
+\begin{example}
+\exmp{3
+1 2 3
+3 1 2
+2 1 3
+}{6
+}%
+\exmp{3
+1 3 2
+2 3 1
+3 1 2
+}{6
+}%
+\end{example}
+
+\end{problem}

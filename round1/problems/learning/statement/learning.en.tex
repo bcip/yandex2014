@@ -1,0 +1,41 @@
+\begin{problem}{Learning to Add}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 mebibytes}{}
+
+  Little Tomek is learning how to add.
+  His teacher wrote out a sequence of $n$ numbers and Tomek adds them one by one (in order) to his result. At the beginning, the result is
+  equal to zero.  However, from time to time, he mixes up the order of digits.
+  In particular, after performing an addition, he writes down the new result with randomly permuted digits,
+  discarding any leading zeros.
+  For example, if the previous result was $67$ and Tomek added $42$, the new result could be $109$, $901$, $190$, $910$, $91$ or $19$.
+
+  What is the maximum result Tomek can obtain after $n$ additions?
+
+\InputFile
+  The first line of input contains an integer $n$ ($1 \leq n \leq 5$) -- the length of the sequence Tomek has to sum.
+  The second line contains $n$ integers $a_1, \ldots, a_n$ ($1 \leq a_i \leq 100$) -- the elements of the sequence, in order.
+
+\OutputFile
+  Output the maximum result Tomek can obtain.
+
+\Examples
+\begin{example}
+\exmp{
+5
+42 1 3 3 6
+}{
+100
+}%
+\end{example}
+
+\Note
+
+    Tomek could perform the following additions, in order:
+    \begin{itemize}
+        \item 0 + 42 = 42
+        \item 42 + 1 = 43
+        \item 43 + 3 = 46
+        \item 46 + 3 = \textbf{94}
+        \item 94 + 6 = 100
+    \end{itemize}
+    Note that here Tomek makes only one mistake; in general, he may make any number of mistakes.
+
+\end{problem}

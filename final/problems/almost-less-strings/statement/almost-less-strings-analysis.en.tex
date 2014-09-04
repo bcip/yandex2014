@@ -1,0 +1,27 @@
+\begin{problem}{String Problem}
+{\textsl{standard input}}{\textsl{standard output}}
+{4 seconds}{512 mebibytes}{}
+
+Consider pair of strings $s$ and $w$. String $s$ is \emph{almost less} than
+string $w$ when and only when string $s^{min}$
+(lexicographically minimal string which can be obtained from $s$
+by replacing exactly one letter) is strictly less than $w$.
+
+But it is easy to see that $s^{min}$ can be obtained from $s$
+in the following way:
+replace first character not equal to ``\texttt{a}'' with character
+``\texttt{a}''; if $s$ contans only ``\texttt{a}''s, then $s=s^{min}$,
+
+Consider string $s_i$ and then lets find $C_i$: the number of strings
+$s_j$ (possibly $i=j$) such as $s_i^{min} < s_j$.
+It adds to answer $C_i-1$, if $s_i^{min} \ne s_i$, and $C_i$ otherwise.
+
+To calculate values of $C_i$ two ways can be used:
+
+\begin{itemize}
+\item sort all $s_i$ and then use binary search to find $C_i$;
+\item add all strings to a \textsl{trie} and then find $C_i$ by
+descending on it.
+\end{itemize}
+
+\end{problem}

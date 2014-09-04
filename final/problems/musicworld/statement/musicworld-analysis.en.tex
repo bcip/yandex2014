@@ -1,0 +1,53 @@
+\begin{problem}{Musical World}
+{\textsl{standard input}}{\textsl{standard output}}
+{1 second}{512 mebibytes}{}
+
+Author's solution is based on idea of the \emph{generating function}.
+If you are not familiar with this idea, you can read, for example,
+
+\verb+http://en.wikipedia.org/wiki/Generating_function+
+
+Let $Y_i$ be the random variable equal to number of tracks in $i$-th
+generation.
+
+Consider generating functions of random variables  
+$\psi_i(x) = \sum\limits_{j=0}^{K_i}{p_{ij}x^j}$ given in the input
+and generating functions of random variables $Y_i$ 
+$\varphi_i(x) = \sum\limits_{j=0}^{\infty}{\mathbb{P}\{Y_i=j\}x^j}$.
+
+We have $\psi_i$ in explicit form, and we know that $\varphi_1(x) = x$. 
+Let us try to express $\varphi_{i+1}$ using $\psi_{i}$ and $\varphi_{i}$.
+
+In case when $Y_i = k$, $\varphi_{i+1}(x) = \psi_i(x)^k$.
+But, because variable $Y_i$ is random, the required generating function
+is weigted the sum of generating functions for differrent values
+with weights equal to probabilities of thise values, i.e. 
+$$\sum\limits_{j=0}^{\infty}{\mathbb{P}\{Y_i=j\}\psi_i(x)^j} =
+\varphi_i(\psi_i(x))\text{.}$$
+
+Because the required value can be very big, it is impossible to find
+the generating function for $Y_(n+1)$ explicitly.
+But let us take into account that
+
+$$\mathbb{E}\frac{Y_i(Y_i-1)}{2} =
+\sum\limits_{j=0}^{\infty}{\mathbb{P}\{Y_i=j\}\frac{j(j-1)}{2}} =
+\frac{1}{2}\varphi_i''(1)\text{.}$$
+
+Let us express the value and also first and second derivatives
+of $\varphi_{i+1}(x)$ from (1) using previous functions.
+We know that $\varphi_i(1) = \psi_i(1) = 1$ and
+$\varphi_{i+1}(x) = \varphi_i(\psi_i(x))$.
+Then $$\varphi'_{i+1}(x) = \varphi'_{i}(\psi_i(x))\psi_{i}'(x)\text{ and}$$
+$$\varphi''_{i+1}(x) = \varphi''_{i}(\psi_i(x))\psi_{i}'(x)^2 +
+\varphi'_{i}(\psi_i(x))\psi_{i}''(x)\text{.}$$
+
+After substitution of $x = 1$, those equations can be simplified
+to the following form:
+$$\varphi'_{i+1}(1) = \varphi'_{i}(1)\psi_{i}'(1)\text{ and}$$
+$$\varphi''_{i+1}(1) = \varphi''_{i}(1)\psi_{i}'(1)^2 +
+\varphi'_{i}(1)\psi_{i}''(1)\text{.}$$
+
+Also is easy to see that all calculations can be done using modulo $10^9+7$,
+replacing the given probabilities with appropriate values using this modulo.
+
+\end{problem}

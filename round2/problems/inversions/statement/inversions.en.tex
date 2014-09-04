@@ -1,0 +1,42 @@
+\begin{problem}{Inversions}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 megabytes}
+
+Little Petya likes permutations very much. The only thing he likes more than permutations is playing with little Masha. She has a birthday soon, and Petya decided to present her a permutation. He knows that $K$ is her favorite number. So, he decided that the permutation he is going to present must contain exactly $K$ inversions (see the definition below). Among all permutations with $K$ inversions, Petya wants to choose the one that contains the smallest number of elements. If there are still several possible permutations, Petya will choose the lexicographically smallest one. Help him to find the desired permutation.
+
+A \emph{permutation} is an ordered arrangement of the set of numbers $1$, $2$, $\dots$, $N$ in which each of these numbers occurs exactly once. In the following definitions, $\pi(i)$ stands for the number located in the $i$-th position of the permutation $\pi$.
+
+An \emph{inversion} in a permutation $\pi$ of numbers $1$, $2$, $\dots$, $N$ is a pair of indices $(i, j)$ such that $1 \le i < j \le N$ and $\pi(i) > \pi(j)$.
+
+A permutation $\pi$ is considered to be lexicographically smaller than permutation $\sigma$ if the following two statements hold for some index $j$ ($1 \le j \le N$):
+\begin{itemize}
+\item $\pi(j) < \sigma(j)$;
+\item $\pi(i) = \sigma(i)$ for each $i$ from $1$ to $j - 1$, inclusive.
+\end{itemize}
+
+\InputFile
+Input contains an integer $K$ ($0 \le K \le 1\,000\,000\,000$) which is the desired number of inversions in the permutation.
+
+\OutputFile
+The first line of output must contain the number $N$ of elements in the desired permutation. The second line must contain $N$ integers separated by spaces, which denote the permutation Petya is looking for.
+
+\Examples
+
+\begin{example}
+\exmp{0
+}{1
+1
+}%
+\exmp{1
+}{2
+2 1
+}%
+\exmp{2
+}{3
+2 3 1
+}%
+\exmp{3
+}{3
+3 2 1
+}%
+\end{example}
+
+\end{problem}

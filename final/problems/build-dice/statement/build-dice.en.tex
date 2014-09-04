@@ -1,0 +1,46 @@
+\begin{problem}{Dice}{stdin}{stdout}{1 second}{512 megabytes}
+
+You are given a cube.
+Each of its six faces has an integer from $1$ to $6$ corresponding to it.
+Different faces have different integers corresponding to them.
+
+You are also given a hexomino: a planar polygon made of six equal-sized squares connected edge-to-edge.
+Each of its six squares also has an integer from $1$ to $6$ corresponding to it.
+Again, different squares have different integers corresponding to them.
+
+Check if it is possible to fold the given hexomino into a cube which could be then rotated in such a way that the numbering of its faces corresponds to the numbering of the faces of the given cube.
+It is allowed to fold the hexomino along the borders of the squares, but it is not allowed to make cuts.
+
+
+\InputFile
+The first line of input contains the integers corresponding to the faces of the cube.
+The faces are listed in the following order: front, back, left, right, top, bottom.
+
+After that, the hexomino is given as an array of $K \times N$ squares:
+each of next $K$ lines contains exactly $N$ digits from $0$ to $6$ without spaces.
+Zeroes denote empty cells, and non-zero digits denote the cells of the hexomino.
+
+You may assume that each row and each column of the array contains at least one non-zero digit, each non-zero digit from $1$ to $6$ can be found in the array exactly once, and non-zero digits form an edge-connected polygon.
+
+
+\OutputFile
+Print ``\texttt{Yes}'' if it is possible to obtain the given cube by folding the given hexomino, and ``\texttt{No}'' otherwise.
+
+
+\Examples
+
+\begin{example}
+\exmp{1 2 3 4 5 6
+0100
+3546
+0200
+}{Yes
+}%
+\exmp{1 6 2 5 3 4
+1020
+3546
+}{No
+}%
+\end{example}
+
+\end{problem}

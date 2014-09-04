@@ -1,0 +1,40 @@
+\begin{problem}{Remainders}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 megabytes}
+
+Little Petya likes maths very much. Recently he learned about integer division with remainder at the math lesson. He received the following task as homework: given the numbers $a_1$, $a_2$, $\dots$, $a_n$ one needs to evaluate the expression
+
+$$(\dots((a_{1} \bmod a_{2}) \bmod a_{3}) \dots \bmod a_{n - 1}) \bmod a_{n}\text{.}$$
+
+Here, $a \bmod b$ denotes the remainder of division of $a$ by $b$. Petya wrote down the numbers $a_i$, however he forgot the order in which they were given. So he decided to evaluate the expression written above for all $N!$ permutations of numbers $a_i$ and let the teacher choose the correct one. Soon he realized that the number of permutations might be very large and he is unable to finish the task before the next math lesson. Luckily, the number of possible results of the expression written above is not that large. So Petya decided to find all the numbers that can be equal to the value of his expression for some permutation of $a_i$. Help him find the amount of such numbers.
+
+\InputFile
+The first line of input contains an integer $N$ ($2 \le N \le 100$) which is the amount of numbers in Petya's expression. The second line contains $N$ space-separated positive integers not exceeding $3 \cdot 10^5$.
+
+\OutputFile
+Output the number of different possible results of Petya's expression.
+
+\Examples
+
+\begin{example}
+\exmp{4
+5 6 7 8
+}{4
+}%
+\exmp{3
+10 7 10
+}{3
+}%
+\exmp{5
+34 20 199 22 135
+}{16
+}%
+\end{example}
+
+\Note
+In the first example, the possible results of the expression are $1$, $2$, $3$ and $5$.
+
+In the second example, only three permutations of $a_i$ are possible. All of them lead to different results:
+$$(7 \bmod 10) \bmod 10 = 7\text{,}$$
+$$(10 \bmod 7) \bmod 10 = 3\text{,}$$
+$$(10 \bmod 10) \bmod 7 = 0\text{.}$$
+
+\end{problem}

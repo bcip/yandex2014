@@ -1,0 +1,33 @@
+\begin{problem}{Distance}{\textsl{standard input}}{\textsl{standard input}}{2 seconds}{256 mebibytes}{}
+
+Artem likes his car. He likes to drive lately at night around the area. But Artem's car is very old, so it can go at most two miles at a time.
+
+Artem lives in the area that has $n$ cities and $(n - 1)$ bidirectional roads. All cities are connected, that is, one can reach any city from any other city. The length of each road is one mile.
+
+Artem wants to find the number of different pairs of cities such that the length of the shortest path between them is exactly two miles. Two pairs of cities are considered different if there exists a city which belongs to exactly one of these pairs.
+
+\InputFile
+The first line of input contains a single integer $n$ ($1 \le n \le 10^5$), the number of cities. The next $(n - 1)$ lines contain descriptions of the roads. Each of these lines contains two integers $v_i$ and $u_i$ ($1 \le v_i, u_i \le n$) which mean that city $v_i$ is connected by a bidirectional road with city $u_i$.
+
+It is guaranteed that one can reach any city from any other city using the road network.
+
+\OutputFile
+Output a single integer: the answer to the problem.
+
+\Examples
+
+\begin{example}
+\exmp{3
+1 2
+2 3
+}{1
+}%
+\exmp{4
+1 2
+2 3
+1 4
+}{2
+}%
+\end{example}
+
+\end{problem}

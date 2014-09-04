@@ -1,0 +1,42 @@
+\begin{problem}{String Problem}{stdin}{stdout}{4 seconds}{512 megabytes}
+
+Search requests are great! An edit box and a search button order the whole internet in front of you, in search of an answer. Millions of search requests are carefully stored to allow answering the questions faster. To make a search, even faster users receive hints as they type the question. But what if we know nothing about the user?
+
+You are working on an algorithm that will order two request hints in lexicographical order. Well, almost lexicographical.
+
+Users can make typos while entering a search request. We say that string $A$ is \emph{almost less} than string $B$ if string $A$ is lexicographically less than string $B$, or we can replace one letter in $A$ with another lowercase English letter so that the resulting string is lexicographically less than string $B$.
+
+You are given a set of $N$ words which are the search hints. Calculate the number of ordered pairs of hints in which the first hint is \emph{almost less} than the second hint. The order of the words matters: if two hints are \emph{almost less} than each other, you need to count both ordered pairs.
+
+\InputFile
+The first line of input contains one integer $N$ ($1 \le N \le 10^6$), the number of given search hints.
+Each of the next $N$ lines contains a single word which is a search hint.
+Words consist only of lowercase English letters, and their total length does not exceed $10^6$ characters.
+
+
+\OutputFile
+Print one integer: the number of pairs of search hints such that the first one is \emph{almost less} than the second.
+
+
+\Examples
+
+\begin{example}
+\exmp{3
+a
+b
+c
+}{4
+}%
+\exmp{2
+aab
+aba
+}{2
+}%
+\exmp{2
+aa
+aaa
+}{1
+}%
+\end{example}
+
+\end{problem}

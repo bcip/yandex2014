@@ -1,0 +1,36 @@
+\begin{problem}{Burger Bar}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 mebibytes}{}
+
+In addition to being a duck breeder, Wojtek manages a Burger Bar.
+It is said to be the best in town, or at least one of the best.
+Well, for sure it is a pretty good place.
+Not the worst, by any means.
+People do like eating there.
+At least Tomek does.
+He was recommending Wojtek's bar to some of his friends lately, but they wanted to know how many toppings are there to choose from.
+Tomek did not remember, but fortunately he had some of the receipts in his wallet.
+Every time he bought a burger, he chose some subset of the available toppings and got billed for the sum of their prices.
+Knowing how many zlotys Tomek paid for the toppings every time, calculate the minimum possible number of toppings in Wojtek's restaurant.
+
+
+\InputFile
+    The first line of the input contains an integer $n$ ($1 \leq n \leq 20$), the number of receipts.
+	 The second line contains $n$ integers $a_1, \ldots, a_n$ ($1 \leq a_i \leq 50$), the costs of Tomek's toppings on the receipts.
+
+\OutputFile
+	Output the minimum possible number of toppings in Wojtek's restaurant. Note that price of each topping in Wojtek's bar is non-negative integer.
+
+\Examples
+\begin{example}
+\exmp{
+5
+42 1 3 3 6
+}{
+4
+}%
+\end{example}
+
+\Note
+
+One of the many possible solutions is one kind of topping for 1 zloty, two kinds of toppings for 3 zlotys each, and one kind of topping for 35 zlotys.
+
+\end{problem}

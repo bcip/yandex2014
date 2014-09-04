@@ -1,0 +1,67 @@
+\begin{problem}{1024 Stack Edition}
+{\textsl{standard input}}{\textsl{standard output}}
+{1 second}{512 mebibytes}{}
+
+First consider the case when $N=0$. Let $f(i)$ be the expected minimal number
+of coins needed to construct $2^i$. Then in case when $p<100$ we can 
+use the following formulae to calculate $f(i)$:
+\begin{enumerate}
+
+\item $f(0) = 1 / p - 1$;
+
+\item $f(1) = min (f(0) \cdot 2,~1 / (1 - p) - 1,~1 - p)$;
+
+\item $f(i) = 2 \cdot f(i - 1),~i > 1$;
+
+\end{enumerate}
+
+These formulae can be easily tuned for the case when $p=100$. Thus, if $N = 0$ the answer will be $f(10)$.
+
+Now consider $N > 0$. 
+
+Let $g(i, j)$ be the expected minimal number of coins needed to
+construct only one number $2^j$ from the top $i$ numbers of the stack. 
+To count $g(i, *)$ for fixed $i$, we will use the following 2-step procedure;
+here $S(i)$ stands for the binary logarithm of the $i$-th number from the top of stack.
+
+\begin{enumerate}
+
+\item Calculate $g(i, S(i)) = 1 + \min( g(i - 1, *) )$ for $i > 1$.
+This represents a situation when we construct some number from
+the topmost $i-1$ one and then delete it.
+Also calculate $g(i, S(i) + 1) = g(i - 1, S(i))$.
+This formula represents a situation when we construct a number $2^{S(i)}$
+from the topmost $i-1$ one and then merge it
+with the current number, which is also equal to $2^{S(i)}$.
+For all $j$ other than $S(i)$ and $S(i) + 1$, let $g(i, j) = +\inf$.
+
+\item On the previous stage we've processed the number $S(i)$.
+Before switching
+to $g(i + 1, *)$ and the number $S(i + 1)$ we can do something
+with the $i$'th number on the stack, constructing some other number from it.
+So we should recalculate $g(i, *)$ in the following way: 
+
+\begin{itemize}
+
+\item $g(i, 0) = \min( g(i, 0), \min (g(i, *)) + 1 / p)$,
+i.e. we either use $g(i, 0)$ or delete the current number
+and put $1 = 2^0$ instead.
+    
+\item $g(i, j) = \min( g(i, j), \min (g(i, *)) + 1 + f(j)$,
+$g(i, j - 1) + f(j - 1) )$ for $j > 0$.
+Here we can either delete the $i$'th number and replace it with 
+$2^j$ using $f(j)$ coins or use $g(i, j - 1)$ steps to
+create one $2^{j-1}$, then $f(j-1)$ steps to create
+another $2^{j-1}$ and then merge them.
+
+\end{itemize}
+\end{enumerate}
+
+The answer to our problem will be equal to $g(N, 10)$.
+Note that during the process of calculation of $g(*, *)$,
+we need to calculate $g(*, 11)$ as well.
+The complexity of our solution is $O(NR)$ where $R$ is the highest
+power of two present in the input data
+(due to statement limitations $R \le 10$).
+
+\end{problem}

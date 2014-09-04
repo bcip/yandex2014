@@ -1,0 +1,28 @@
+\begin{problem}{Unextendable Matching}
+{\textsl{standard input}}{\textsl{standard output}}
+{1 second}{512 mebibytes}{}
+
+To solve this problem, we can notice that the number of vertices
+on the left side is small.
+We can calculate the recursion $f(i,j)$: the number of ways to assign
+the edges if we have already taken the first $i$ vertices on the right side;
+then $j$ is a mask in 3-base system describing the vertices on the left side
+in the next way:
+
+\begin{itemize}
+\item $0$ means a vertex couldn't be assigned to any vertex on the right side,
+\item $1$ means a vertex could be assigned to some vertex on the right side,
+but wasn't and still is not assigned to any vertex on the right side,
+\item $2$ means a vertex is connected with edge to some vertex
+on the right side.
+\end{itemize}
+
+When we take the next vertex from the right side,
+we can calculate the new 3-based mask for the vertices on the left side.
+To find the answer, we should take only the masks without 1 in then
+(there shouldn't exist a vertex that could be assigned to some other vertex).
+So the answer is the sum of $f(n_2,ValidMasks)$, where $ValidMasks$ is
+an element of the set of all masks which don't contain 1 in their
+3-based representation.
+
+\end{problem}

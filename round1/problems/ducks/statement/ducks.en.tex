@@ -1,0 +1,33 @@
+\begin{problem}{Adjusting Ducks}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 mebibytes}{}
+
+Wojtek's ducks' constant quacking annoys Tomek a great deal.
+When approached about the issue, Wojtek told Tomek to take it easy...
+Things got serious when Tomek bought a sling.
+They held a diplomatic meeting to reach a compromise.
+It turns out that when two or more ducks have the same quacking pitch, the sound becomes so constant, that they do not disturb Tomek at all.
+Fortunately enough, the local veterinarian can alter the pitches of ducks.
+For changing a duck's quacking pitch from $a$ to $b$, he demands $|b - a|$ zlotys.
+How many zlotys does Wojtek have to spend to make it so no duck is alone at its pitch?
+
+\InputFile
+    The first line of the input contains an integer $n$ ($2 \leq n \leq 10^5$), the number of ducks.
+	 The second line contains $n$ integers $a_1, \ldots, a_n$ ($1 \leq a_i \leq 10^8$), the pitches of the ducks.
+
+\OutputFile
+	Output the minimal cost of adjusting the ducks' pitches so that Tomek is no longer annoyed.
+
+\Examples
+\begin{example}
+\exmp{
+5
+42 1 3 3 6
+}{
+38
+}%
+\end{example}
+
+\Note
+
+One possible solution is to adjust the pitch of the second duck to 3 (for a price of 2) and the pitch of the last duck to 42 (for a price of 36).
+
+\end{problem}

@@ -1,0 +1,30 @@
+\begin{problem}{Cycles with Common Vertex}{\textsl{standard input}}{\textsl{standard output}}{2 seconds}{256 megabytes}
+
+Recently Ksyusha bought $N$ graphs, the $i$-th of them is a chain consisting of $c_i$ vertices (see the definition below). In addition to them, Ksyusha is a happy owner of the Super-vertex. Ksyusha added edges from the endpoints of each chain to the Super-vertex. As a result, she obtained $N$ cycles intersecting in Super-vertex, the $i$-th of these cycles consists of $(c_{i} + 1)$ vertices.
+
+Ksyusha decided to color each vertex of her graph into either black or white. She calls a graph good if the shortest distance between any two vertices colored black is greater than or equal to $K$. Now Ksyusha is wondering what is the maximum number of vertices that can be colored black so that the graph would still remain good?
+
+\InputFile
+The first line contains two integers $N$ and $K$ ($1 \le N \le 100\,000$, $2 \le K \le 100\,000$) which denote the number of chains and the restriction on the distance between vertices colored black. The next line contains a sequence of $N$ integers $c_i$ ($K \le c_i \le 10^9$) which denote the lengths of chains.
+
+
+\OutputFile
+Print the maximum number of vertices that can be colored black. 
+
+\Examples
+
+\begin{example}
+\exmp{2 3
+3 3
+}{2
+}%
+\exmp{2 3
+6 9
+}{5
+}%
+\end{example}
+
+\Note
+A chain consisting of $V$ ($V > 1$) vertices is a graph where all vertices except two have degree $2$. The remaining two vertices have degree $1$ and are called the endpoints of the chain.
+
+\end{problem}

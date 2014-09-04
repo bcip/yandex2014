@@ -1,0 +1,28 @@
+\begin{problem}{Weird Game}{\textsl{standard input}}{\textsl{standard input}}{6 seconds}{256 mebibytes}{}
+
+\textit{Attention! The source size limit for this problem is $20\,480$ bytes.}
+
+Artem likes games. He always plays different games with his friends and always wins. What helps Artem to win? He is smart, and he creates these games himself.
+
+Now he is working on a new game. In this game, two players are given an $1 \times n$ board that is initially colored white. Players take turns alternatively. On each turn, a player can paint a segment of consecutive white cells of length $L$ with black color. If a player cannot make his turn, he loses the game.
+
+Now you need to help Artem do an analysis of the game. He wants to figure out who will win the game for each value of $L$ from $1$ to $n$, inclusive. You can assume that both players play optimally.
+
+\InputFile
+You are given a single integer $n$ ($1 \le n \le 7000$).
+
+\OutputFile
+Print a single line containing $n$ characters. The $i$-th character must be equal to ``\texttt{F}'' if the first player wins when $L = i$. Otherwise, the $i$-th character must be equal to ``\texttt{S}''.
+
+\Examples
+
+\begin{example}
+\exmp{3
+}{FFF
+}%
+\exmp{8
+}{SFSFFFFF
+}%
+\end{example}
+
+\end{problem}

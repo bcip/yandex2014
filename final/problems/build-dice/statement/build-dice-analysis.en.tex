@@ -1,0 +1,39 @@
+\begin{problem}{Dice}
+{\textsl{standard input}}{\textsl{standard output}}
+{1 second}{512 mebibytes}{}
+
+The key point in any solution is the following:
+hexomino can be folded in two ways (``inside'' and ``outside''),
+and it will generate two dice which can be converted one into another
+by swapping two numbers fitting to any pair of opposite faces.
+Taking into account that rotation of the cube by 180 degrees swaps
+numbers on two pairs of opposite faces, we can say that we do not need
+to consider more than 2 orientations. 
+
+After making the above observation, the problem may be solved in several ways.
+
+One of them is the following. 
+
+\begin{enumerate}
+\item Put the cube on the hexomino such as the bottom face of the cube
+will stay at the cell labeled by the same number as this face. 
+
+\item For any of four possible rotations of the cube, try to roll it to
+all other elements of hexomino; the cube can be rolled on
+some cell if and only if this cell is labeled by the same number
+as the bottom face of the cube after the roll.
+
+\item If at least for one rotation all 6 cells of hexomino are visited,
+the answer is ``\texttt{Yes}''. 
+
+\item Otherwise, we will swap numbers between left and right faces and then
+repeat from step 2. If the answer ``\texttt{Yes}'' is not reached,
+then the answer is ``\texttt{No}''.
+\end{enumerate}
+
+Another way is to precalculate all 11 unfoldings of the cube and then to
+rotate the given hexomino; if for some rotation or mirroring, the shapes
+coincide, check if pairs of numbers on opposite sides fit into
+appropriate cells in the unfolding.
+
+\end{problem}
