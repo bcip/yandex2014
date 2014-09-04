@@ -1,0 +1,17 @@
+Problem	Diffi.	Type	Aspect
+1B	E+	Idea	DP
+1C	E	Detail	Ad-hoc
+2B	M-	Trad	sort+DP
+2C	H+	Idea	DS
+2F	M+	Trad	Comb
+3A	E-	Trad	Ad-hoc
+3C	E	Trad	Scan
+3E	M	Geo	Geo
+3F	H-	Idea	DP
+fA	H	Detail	DP
+fC	M	3DSim	Sim
+fF	M-	Trad	Comb
+
+#Difficulty: (E)asy, (M)edium, (H)ard
+
+
